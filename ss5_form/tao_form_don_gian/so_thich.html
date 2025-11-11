@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sở thích của bạn</title>
+    <style>
+        body {
+            background-color: #e0ffff;
+        }
+
+        form {
+            width: 500px;
+            background-color: #fff;
+            margin: 30px auto;
+            border: 1px solid #ccc;
+            padding: 10px 20px 20px 20px;
+        }
+
+        h2 {
+            background-color: #ff4500;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 20px;
+            margin-top: 0;
+        }
+
+        label {
+            font-weight: bold;
+            display: inline-block;
+            width: 100px;
+            margin-top: 10px;
+        }
+
+        input[type="text"], input[type="email"] {
+            width: 300px;
+            padding: 5px;
+            margin-top: 5px;
+        }
+
+
+        .hobby-group {
+            margin-left: 100px;
+            margin-top: 5px;
+            color: #ff4500;
+        }
+
+
+        input[type="submit"], input[type="reset"] {
+            margin-top: 15px;
+            padding: 5px 15px;
+            font-weight: bold;
+        }
+
+        input[type="submit"]:hover,
+        input[type="reset"]:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<form action="#" method="post">
+    <h2>SỞ THÍCH CỦA BẠN</h2>
+
+
+    <label for="yourname">Họ và tên:</label>
+    <input type="text" id="yourname" name="yourname"><br>
+
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"><br>
+
+
+    <label>Sở thích:</label><br>
+    <div class="hobby-group">
+        <input type="checkbox" name="hobby" value="thethao"> Thể thao
+        <input type="checkbox" name="hobby" value="amnhac"> Âm nhạc
+        <input type="checkbox" name="hobby" value="docsach"> Đọc sách <br>
+        <input type="checkbox" name="hobby" value="luotweb"> Lướt web
+        <input type="checkbox" name="hobby" value="choigame"> Chơi game
+        <input type="checkbox" name="hobby" value="dienanh"> Điện ảnh <br>
+        <input type="checkbox" name="hobby" value="dulich"> Du lịch
+    </div>
+
+
+    <div style="text-align: center;">
+        <input type="submit" value="Gửi thông tin">
+        <input type="reset" value="Nhập lại">
+    </div>
+</form>
+</body>
+</html>

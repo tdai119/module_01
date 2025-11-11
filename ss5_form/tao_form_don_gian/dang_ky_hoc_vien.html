@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng ký học viên</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffcc;
+            margin: 40px;
+        }
+
+        .form-container {
+            width: 600px;
+            background-color: #ffffaa;
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+
+        .form-header {
+            background-color: #ccffcc;
+            color: blue;
+            font-size: 24px;
+            font-weight: bold;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: inline-block;
+            width: 100px;
+            font-weight: bold;
+            color: #000099;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        textarea,
+        select {
+            width: 300px;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        textarea {
+            height: 80px;
+        }
+
+        .gender input {
+            width: auto;
+        }
+
+        .buttons {
+            margin-top: 15px;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            padding: 5px 15px;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="form-container">
+    <div class="form-header">ĐĂNG KÝ HỌC VIÊN</div>
+    <form>
+        <label for="fullname">Họ và tên</label>
+        <input type="text" id="fullname" name="fullname"><br>
+
+        <label for="birthday">Ngày sinh</label>
+        <input type="date" id="birthday" name="birthday"><br>
+
+        <label>Giới tính</label>
+        <span class="gender">
+        <input type="radio" id="male" name="gender" value="Nam">
+        <label for="male">Nam</label>
+        <input type="radio" id="female" name="gender" value="Nữ">
+        <label for="female">Nữ</label>
+      </span><br>
+
+        <label for="address">Địa chỉ</label>
+        <textarea id="address" name="address"></textarea><br>
+
+        <label for="class">Lớp</label>
+        <select id="class" name="class">
+            <option value="">-- Chọn lớp --</option>
+            <option value="A">Lớp A</option>
+            <option value="B">Lớp B</option>
+            <option value="C">Lớp C</option>
+        </select><br>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email"><br>
+
+        <label for="phone">Điện thoại</label>
+        <input type="text" id="phone" name="phone"><br>
+
+        <div class="buttons">
+            <input type="submit" value="Đăng ký">
+            <input type="reset" value="Nhập lại">
+        </div>
+    </form>
+</div>
+</body>
+</html>
