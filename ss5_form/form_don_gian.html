@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Form</title>
+    <style>
+        body {
+            font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, sans-serif;
+            background-color: #fff;
+        }
+
+        .order-form {
+            width: 280px;
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 6px;
+            box-shadow: 0 0 8px rgba(0, 0, 255, 0.2);
+            margin: 30px;
+        }
+
+        h2 {
+            margin-top: 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        select, input[type="text"], input[type="email"], input[type="tel"] {
+            width: 100%;
+            padding: 5px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        .radio-group {
+            margin-top: 5px;
+            margin-left: 15px;
+        }
+
+        .name-group input {
+            width: 48%;
+            display: inline-block;
+            margin-top: 5px;
+        }
+
+        .name-group input:first-child {
+            margin-right: 4%;
+        }
+
+        .phone-group input {
+            width: 28%;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .phone-group input:not(:last-child) {
+            margin-right: 4%;
+        }
+
+        input[type="submit"] {
+            margin-top: 10px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .required {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<form action="#" method="post" class="order-form">
+    <h2>Order Form</h2>
+
+    <label>What would you like to buy?</label>
+    <select>
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+    </select>
+
+    <label>How many would you like to order?</label>
+    <div class="radio-group">
+        <label><input type="radio" name="quantity"> 1 - $10</label><br>
+        <label><input type="radio" name="quantity"> 2 - $20</label><br>
+        <label><input type="radio" name="quantity"> 3 - $25</label>
+    </div>
+
+    <label>Name <span class="required">*</span></label>
+    <div class="name-group">
+        <input type="text" placeholder="FirstName">
+        <input type="text" placeholder="LastName">
+    </div>
+
+    <label>Email</label>
+    <input type="email">
+
+    <label>Phone Number</label>
+    <div class="phone-group">
+        <input type="text" maxlength="3">
+        <input type="text" maxlength="3">
+        <input type="text" maxlength="4">
+    </div>
+
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
