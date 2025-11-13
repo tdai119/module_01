@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính Điểm Trung Bình</title>
+</head>
+<body>
+
+        <h2>Nhập điểm 3 môn</h2>
+        <input id ="toan" placeholder="Điểm toán">
+        <input id ="ly" placeholder="Điểm Lý">
+        <input id ="hoa" placeholder="Điểm Hóa">
+        <button onclick="tinhTrungBinh()">Tính điểm trung bình</button>
+
+        <div id="result"></div>
+</body>
+<script>
+    function tinhTrungBinh() {
+        let toan = +document.getElementById('toan').value;
+        let ly = +document.getElementById('ly').value;
+        let hoa = +document.getElementById('hoa').value;
+
+        let tb = ((toan + ly + hoa) / 3);
+
+        document.getElementById('result').innerText = "Điểm trung bình:" + tb;
+    }
+</script>
+</html>
