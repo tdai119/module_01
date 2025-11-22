@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+
+<h3>Bài 2: Kiểm tra điều kiện vào lớp 10</h3>
+
+<input id="age" type="number" placeholder="Nhập tuổi">
+<button onclick="checkAge()">Kiểm tra</button>
+
+<p id="result"></p>
+
+<script>
+    function checkAge() {
+        let age = parseInt(document.getElementById("age").value);
+        let message = "";
+
+        if (age >= 15) {
+            message = "Đủ điều kiện vào lớp 10";
+        } else {
+            message = "Không đủ điều kiện vào lớp 10";
+        }
+
+        document.getElementById("result").innerText = message;
+    }
+</script>
+
+</body>
+</html>
