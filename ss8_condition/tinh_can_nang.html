@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Máy tính BMI</title>
+
+</head>
+<body>
+<div>
+    <h2>Tính chỉ số BMI</h2>
+
+    <label for="weight">Cân nặng (kg)</label>
+    <input id="weight" type="number" placeholder="Ví dụ: 65" min="0">
+    <br>
+    <label for="height">Chiều cao (cm hoặc m)</label>
+    <input id="height" type="text" placeholder="Ví dụ: 175 (cm) hoặc 1.75 (m)">
+
+    <button id="calc" class="btn-calc">Tính BMI</button>
+
+    <div id="output" class="result" style="display:none;"></div>
+</div>
+
+<script>
+
+    const weightEl = document.getElementById('weight');
+    const heightEl = document.getElementById('height');
+    const btn = document.getElementById('calc');
+    const out = document.getElementById('output');
+
+    function parseHeight(h) {
+        if (h == null) return NaN;
+        h = String(h).trim().toLowerCase();
+        if (h === '') return NaN;
+
+        const num = parseFloat(h.replace(/[^\d\.\,]/g, '').replace(',', '.'));
+        if (isNaN(num)) return NaN;
+
+        // if user input height as cm
+        if (num >= 3) return num / 100;
+        return num;
+    }
+
+    function classifyBMI(bmi) {
+        if (bmi < 18.5) return 'Underweight';
+        else if (bmi < 25.0) return 'Normal';
+        else if (bmi < 30.0) return 'Overweight';
+        else return 'Obese';
+    }
+
+    btn.addEventListener('click', () => {
+        const w = parseFloat(weightEl.value);
+        const hInput = heightEl.value;
+        const h = parseHeight(hInput);
+
+        if (!isFinite(w) || w <= 0) {
+            out.style.display = 'block';
+            out.textContent = 'Vui lòng nhập cân nặng hợp lệ (kg).';
+            return;
+        }
+        if (!isFinite(h) || h <= 0) {
+            out.style.display = 'block';
+            out.textContent = 'Vui lòng nhập chiều cao hợp lệ (cm hoặc m).';
+            return;
+        }
+
+
+        const bmi = w / (h * h);
+        const bmiRounded = Math.round(bmi * 100) / 100;
+
+        const category = classifyBMI(bmi);
+
+        out.style.display = 'block';
+        out.innerHTML = `BMI = <strong>${bmiRounded.toFixed(2)}</strong> <br>Phân loại: <strong>${category}</strong>`;
+    });
+
+</script>
+</body>
+</html>
