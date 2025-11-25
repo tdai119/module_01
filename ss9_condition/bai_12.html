@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 12</title>
+</head>
+<body>
+<h2>Bài 12: Tính lãi ngân hàng (lãi mẹ đẻ lãi con)</h2>
+
+<input type="number" id="money" placeholder="Số tiền ban đầu (VNĐ)">
+<input type="number" id="months" placeholder="Số tháng gửi">
+<input type="number" id="rate" placeholder="Lãi suất % mỗi tháng">
+<button onclick="calculate()">Tính</button>
+
+<p id="result"></p>
+
+
+<script>
+    function calculate() {
+        let money = parseFloat(document.getElementById("money").value);
+        let months = parseInt(document.getElementById("months").value);
+        let rate = parseFloat(document.getElementById("rate").value);
+        let result = document.getElementById("result");
+
+        if (isNaN(money) || isNaN(months) || isNaN(rate)) {
+            result.innerText = "⚠ Vui lòng nhập đầy đủ số tiền, số tháng và lãi suất!";
+            return;
+        }
+
+        if (money <= 0) {
+            result.innerText = "⚠ Số tiền ban đầu phải lớn hơn 0!";
+            return;
+        }
+
+        if (months <= 0) {
+            result.innerText = "⚠ Số tháng gửi phải lớn hơn 0!";
+            return;
+        }
+
+        if (rate < 0) {
+            result.innerText = "⚠ Lãi suất không được âm!";
+            return;
+        }
+
+        let interestRate = rate / 100;
+
+        let finalAmount = money * Math.pow(1 + interestRate, months);
+
+        result.innerText =
+            "Số tiền cuối kỳ: " + finalAmount.toFixed(0).toLocaleString() + " VNĐ" +
+            "\n(Tính theo lãi mẹ đẻ lãi con)";
+    }
+</script>
+</body>
+</html>
