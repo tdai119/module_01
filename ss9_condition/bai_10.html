@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 10</title>
+</head>
+<body>
+<h3>Tính giá điện</h3>
+
+<input type="number" id="kwh" placeholder="Số kWh">
+<button onclick="calc()">Tính</button>
+
+<p id="result"></p>
+
+<script>
+    function calc() {
+        let kwh = parseFloat(document.getElementById("kwh").value);
+        let price;
+
+        if (kwh <= 50) price = kwh * 2000;
+        else if (kwh <= 100) price = 50 * 1800 + (kwh - 50) * 2000;
+        else price = 50 * 1800 + 50 * 2000 + (kwh - 100) * 2500;
+
+        document.getElementById("result").innerText = "Tiền điện: " + price + " VND";
+    }
+</script>
+</body>
+</html>
