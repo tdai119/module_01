@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 11</title>
+</head>
+<body>
+<h3>Tính thuế thu nhập cá nhân</h3>
+
+<input type="number" id="income" placeholder="Thu nhập từng tháng (triệu)">
+<button onclick="calc()">Tính</button>
+
+<p id="result"></p>
+
+<script>
+    function calc() {
+        let income = parseFloat(document.getElementById("income").value);
+        let tax;
+
+        if (income <= 0) {
+            tax = 0;
+        }
+        else if (income <= 5) tax = income * 0.05;
+        else if (income <= 10) tax = income * 0.10;
+        else if (income <= 18) tax = income * 0.15;
+        else if (income <= 32) tax = income * 0.20;
+        else if (income <= 52) tax = income * 0.25;
+        else if (income <= 80) tax = income * 0.30;
+        else tax = income * 0.35;
+
+        document.getElementById("result").innerText = "Thuế: " + tax + " triệu";
+    }
+</script>
+</body>
+</html>
