@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Số nguyên tố </title>
+</head>
+<body>
+
+<h2>Hiển thị số nguyên tố</h2>
+
+<script>
+
+    let numbers = parseInt(prompt("Nhập số lượng số nguyên tố cần in: "));
+
+    if (isNaN(numbers) || numbers <= 0) {
+        document.write("Giá trị nhập không hợp lệ!");
+    } else {
+
+        let count = 0;
+
+        let N = 2;
+
+        while (count < numbers) {
+
+            let isPrime = true;
+
+            if (N < 2) {
+                isPrime = false;
+            } else {
+                for (let i = 2; i <= Math.sqrt(N); i++) {
+                    if (N % i === 0) {
+                        isPrime = false;
+                        break;
+                    }
+                }
+            }
+            if (isPrime) {
+                document.write(N + "<br>");
+                count++;
+            }
+            N++;
+        }
+    }
+</script>
+
+</body>
+</html>
