@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body>
+<script>
+    let a = 0, b = 1;
+    let result = null;
+
+    for (;;) {
+        let c = a + b;
+        if (c % 5 === 0) {
+            result = c;
+            break;
+        }
+        a = b;
+        b = c;
+    }
+
+    alert("Số Fibonacci đầu tiên chia hết cho 5 là: " + result);
+</script>
+</body>
+</html>
