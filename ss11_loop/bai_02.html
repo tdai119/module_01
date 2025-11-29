@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<div id="result"></div>
+
+<script>
+    let n = prompt("Bạn muốn tính giai thừa của mấy: ");
+    let factorial = 1;
+
+    for (let i = 1; i <= n; i++) {
+        factorial *= i;
+    }
+
+    document.getElementById("result").innerHTML = n + "! = " + factorial;
+</script>
+
+</body>
+</html>
