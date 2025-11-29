@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body>
+
+<pre id="result"></pre>
+
+<script>
+    let width = 21;
+    let height = 7;
+
+    let output = "";
+
+    for (let i = 1; i <= height; i++) {
+        if (i === 1 || i === height) {
+            output += "*".repeat(width) + "\n";
+        } else {
+            output += "*" + " ".repeat(width - 2) + "*\n";
+        }
+    }
+
+    document.getElementById("result").textContent = output;
+</script>
+
+</body>
+</html>
