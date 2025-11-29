@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<h3>Tam giác vuông</h3>
+<pre id="triangle"></pre>
+
+<script>
+    let h = 5;
+    let out = "";
+
+    out += "1) Góc dưới trái\n";
+    for (let i = 1; i <= h; i++) {
+        out += "*".repeat(i) + "\n";
+    }
+
+    out += "\n2) Góc trên trái\n";
+    for (let i = h; i >= 1; i--) {
+        out += "*".repeat(i) + "\n";
+    }
+
+    out += "\n3) Góc dưới phải\n";
+    for (let i = 1; i <= h; i++) {
+        out += " ".repeat(h - i) + "*".repeat(i) + "\n";
+    }
+
+    out += "\n4) Góc trên phải\n";
+    for (let i = h; i >= 1; i--) {
+        out += " ".repeat(h - i) + "*".repeat(i) + "\n";
+    }
+
+    document.getElementById("triangle").innerHTML = out;
+</script>
+
+</body>
+</html>
