@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 8</title>
+</head>
+<body>
+
+<button onclick="playGame()">Chơi</button>
+
+<script>
+    function playGame() {
+        let max = prompt("Bạn muốn đoán số trong khoảng từ 1 đến mấy?");
+
+        if (max === null || max.trim() === "" || isNaN(max) || Number(max) <= 1) {
+            alert("Giá trị không hợp lệ!");
+            return;
+        }
+
+        max = Number(max);
+        let randomNum = Math.floor(Math.random() * max) + 1;
+
+        let chances = 3;
+
+        while (chances > 0) {
+            let guess = prompt("Nhập số bạn đoán (Còn " + chances + " lần):");
+
+            if (guess === null) {
+                alert("Bạn đã hủy lượt chơi.");
+                return;
+            }
+
+            if (guess.trim() === "" || isNaN(guess)) {
+                alert("Giá trị không hợp lệ!");
+                continue;
+            }
+
+            guess = Number(guess);
+
+            if (guess === randomNum) {
+                alert("Chúc mừng! Bạn đã đoán đúng!");
+                return;
+            }
+            else if (guess > randomNum) {
+                alert("Sai! Số bạn đoán LỚN hơn.");
+            }
+            else {
+                alert("Sai! Số bạn đoán NHỎ hơn.");
+            }
+
+            chances--;
+        }
+
+        alert("Hết lượt! Số đúng là: " + randomNum);
+    }
+</script>
+
+</body>
+</html>
