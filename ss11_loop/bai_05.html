@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+
+<h3>Tính lãi ngân hàng (lãi mẹ đẻ lãi con)</h3>
+
+Số tiền ban đầu: <input id="money" type="number"><br><br>
+Số tháng gửi: <input id="months" type="number"><br><br>
+Lãi suất hàng tháng (%): <input id="rate" type="number"><br><br>
+
+<button onclick="calculateInterest()">Tính lãi</button>
+
+<h3>Kết quả:</h3>
+<div id="lai"></div>
+
+<script>
+    function calculateInterest() {
+        let money = document.getElementById("money").value;
+        let months = document.getElementById("months").value;
+        let rate = document.getElementById("rate").value;
+
+        if (money.trim() === "" || months.trim() === "" || rate.trim() === "") {
+            document.getElementById("lai").innerHTML = "Vui lòng nhập đầy đủ dữ liệu!";
+            return;
+        }
+
+        money = Number(money);
+        months = Number(months);
+        rate = Number(rate) / 100;
+
+        if (money <= 0 || months <= 0 || rate <= 0) {
+            document.getElementById("lai").innerHTML = "Dữ liệu không hợp lệ!";
+            return;
+        }
+
+        let original = money;
+
+        for (let i = 1; i <= months; i++) {
+            money += money * rate;
+        }
+
+        document.getElementById("lai").innerHTML =
+            "Tiền ban đầu: " + original.toLocaleString() + " VND" +
+            "<br>Sau " + months + " tháng: <b>" + money.toFixed(0).toLocaleString() + " VND</b>";
+    }
+</script>
+
+</body>
+</html>
