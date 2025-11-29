@@ -10,20 +10,33 @@
 
 <script>
     function playGame() {
-        let max = prompt("Bạn muốn đoán số trong khoảng từ 1 đến mấy?");
+        let min = prompt("Nhập số nhỏ nhất của khoảng muốn đoán:");
 
-        if (max === null || max.trim() === "" || isNaN(max) || Number(max) <= 1) {
+        if (min === null || min.trim() === "" || isNaN(min)) {
             alert("Giá trị không hợp lệ!");
             return;
         }
+        min = Number(min);
 
+        let max = prompt("Nhập số lớn nhất của khoảng muốn đoán:");
+
+        if (max === null || max.trim() === "" || isNaN(max)) {
+            alert("Giá trị không hợp lệ!");
+            return;
+        }
         max = Number(max);
-        let randomNum = Math.floor(Math.random() * max) + 1;
+
+        if (min >= max) {
+            alert("Max phải lớn hơn Min!");
+            return;
+        }
+
+        let randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
 
         let chances = 3;
 
         while (chances > 0) {
-            let guess = prompt("Nhập số bạn đoán (Còn " + chances + " lần):");
+            let guess = prompt(`Nhập số bạn đoán (${min} → ${max}) - Còn ${chances} lần:`);
 
             if (guess === null) {
                 alert("Bạn đã hủy lượt chơi.");
@@ -38,14 +51,12 @@
             guess = Number(guess);
 
             if (guess === randomNum) {
-                alert("Chúc mừng! Bạn đã đoán đúng!");
+                alert("🎉 Chúc mừng! Bạn đã đoán đúng!");
                 return;
-            }
-            else if (guess > randomNum) {
-                alert("Sai! Số bạn đoán LỚN hơn.");
-            }
-            else {
-                alert("Sai! Số bạn đoán NHỎ hơn.");
+            } else if (guess > randomNum) {
+                alert("Sai! Số bạn đoán LỚN hơn số đúng.");
+            } else {
+                alert("Sai! Số bạn đoán NHỎ hơn số đúng.");
             }
 
             chances--;
