@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 6</title>
+</head>
+<body>
+
+<h3>In hình trái tim</h3>
+<pre id="heart"></pre>
+
+<script>
+    let out = "";
+
+    for (let y = 1.5; y > -1.5; y -= 0.1) {
+        for (let x = -1.5; x < 1.5; x += 0.05) {
+            let expr = x*x + y*y - 1;
+            if (expr*expr*expr - x*x*y*y*y <= 0) {
+                out += "*";
+            } else {
+                out += " ";
+            }
+        }
+        out += "\n";
+    }
+
+    document.getElementById("heart").innerHTML = out;
+</script>
+
+</body>
+</html>
