@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+
+<h3>Bài 1</h3>
+<p><b>Chuỗi bạn nhập:</b> <span id="input"></span></p>
+<p><b>Kết quả:</b> <span id="out"></span></p>
+
+<script>
+    let input = prompt("Nhập dãy số (cách nhau bằng dấu cách):");
+
+    document.getElementById("input").innerHTML = input;
+
+    let arr = input.trim().split(/\s+/).map(Number);
+
+    let count = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] >= 10) {
+            count++;
+        }
+    }
+
+    document.getElementById("out").innerHTML =
+        "Có " + count + " số nguyên lớn hơn hoặc bằng 10.";
+</script>
+</body>
+</html>
