@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đổi chữ</title>
+</head>
+<body>
+
+<h3>Đổi chữ thường sang chữ hoa</h3>
+
+<script>
+    let str = prompt("Nhập chuỗi:");
+    let result = "";
+
+    for (let i = 0; i < str.length; i++) {
+        let ch = str[i];
+
+        if (ch === ch.toLowerCase()) {
+            result += ch.toUpperCase();
+        } else {
+            result += ch.toLowerCase();
+        }
+    }
+    document.write("Chuỗi ban đầu: "+ str + "<br>");
+    document.write("Kết quả: " + result);
+</script>
+
+</body>
+</html>

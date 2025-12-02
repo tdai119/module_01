@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chèn dấu</title>
+</head>
+<body>
+
+<h3>Chèn dấu '-' giữa các số chẵn</h3>
+
+<script>
+    let input = prompt("Nhập chuỗi số:");
+
+    input = input.replace(/\s+/g, "");
+
+    let result = "";
+
+    for (let i = 0; i < input.length; i++) {
+        let current = Number(input[i]);
+        let next = Number(input[i + 1]);
+
+        result += input[i];
+
+        if (!isNaN(next) && current % 2 === 0 && next % 2 === 0) {
+            result += "-";
+        }
+    }
+
+    document.write("Kết quả: " + result);
+</script>
+
+</body>
+</html>
