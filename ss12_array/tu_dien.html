@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển</title>
+</head>
+<body>
+
+<h2>Từ điển</h2>
+
+Nhập từ tiếng Anh:
+<input type="text" id="word">
+<button onclick="translateWord()">Dịch</button>
+
+<h3>Kết quả:</h3>
+<div id="result"></div>
+
+<script>
+    let eng = [
+        "hello", "apple", "orange", "dog", "cat", "computer", "car",
+        "house", "book", "school", "table", "chair", "phone", "water",
+        "food", "sun", "moon", "star", "tree", "flower", "river",
+        "mountain", "friend", "family", "love", "work", "city", "country",
+        "music", "movie"
+    ];
+
+    let vie = [
+        "xin chào", "táo", "cam", "chó", "mèo", "máy tính", "xe hơi",
+        "ngôi nhà", "quyển sách", "trường học", "cái bàn", "cái ghế", "điện thoại", "nước",
+        "thức ăn", "mặt trời", "mặt trăng", "ngôi sao", "cây", "bông hoa", "dòng sông",
+        "ngọn núi", "người bạn", "gia đình", "tình yêu", "công việc", "thành phố", "đất nước",
+        "âm nhạc", "bộ phim"
+    ];
+
+    function translateWord() {
+        let input = document.getElementById("word").value;
+        let result = document.getElementById("result");
+
+        if (input.trim() === "") {
+            result.innerHTML = "Vui lòng nhập từ cần tra.";
+            return;
+        }
+
+        input = input.toLowerCase();
+
+        let found = false;
+
+        for (let i = 0; i < eng.length; i++) {
+            if (eng[i] === input) {
+                result.innerHTML = "Nghĩa tiếng Việt: <b>" + vie[i] + "</b>";
+                found = true;
+                break;
+            }
+        }
+
+        if (!found) {
+            result.innerHTML = "<b>Không tìm thấy!</b>";
+        }
+    }
+</script>
+
+</body>
+</html>
