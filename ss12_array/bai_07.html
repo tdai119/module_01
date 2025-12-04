@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<h3>Bài 7</h3>
+<p id="out"></p>
+
+<script>
+    let arr = [7, 34, 17, 22, 2, 19, 15, 45, 6, 9, 27, 5, 32];
+    let V = Number(prompt("Nhập V:"));
+
+    let index = arr.indexOf(V);
+
+    if (index !== -1) {
+        for (let i = index; i < arr.length - 1; i++) {
+            arr[i] = arr[i + 1];
+        }
+        arr[arr.length - 1] = 0;
+    }
+
+    document.getElementById("out").innerHTML =
+        "Mảng sau xử lý: " + arr.join(", ");
+</script>
+</body>
+</html>
