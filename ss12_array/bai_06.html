@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<h3>Bài 6</h3>
+<p id="out"></p>
+
+<script>
+    let arr = [3, 7, 12, 5, 9, 20, 6, 1, 8, 11];
+    let V = Number(prompt("Nhập số V:"));
+    let found = false;
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === V) {
+            found = true;
+            break;
+        }
+    }
+
+    document.getElementById("out").innerHTML =
+        found ? "V is in the array" : "V is not in the array";
+</script>
+</body>
+</html>
