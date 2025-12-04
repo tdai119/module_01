@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<h3>Bài 5</h3>
+<p id="out"></p>
+
+<script>
+    let arr = [3, -4, 5, -1, 0, -9, 10];
+    let count = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] < 0) count++;
+    }
+
+    document.getElementById("out").innerHTML =
+        "Có " + count + " số nguyên âm.";
+</script>
+</body>
+</html>
