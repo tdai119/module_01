@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body>
+
+<h3>Bài 4: Đảo ngược mảng</h3>
+<p id="out"></p>
+
+<script>
+    let arr = [1, 2, 3, 4, 5];
+    let reverse_arr = [...arr].reverse();
+
+    document.getElementById("out").innerHTML =
+        "Mảng ban đầu: " + arr.join(", ") + "<br>" +
+        "Mảng sau khi đảo: " + reverse_arr.join(", ");
+</script>
+
+</body>
+</html>
