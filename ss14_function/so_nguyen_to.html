@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra số nguyên tố</title>
+</head>
+<body>
+
+<p id="out"></p>
+
+<script>
+    function isPrime(number) {
+        if (number < 2) return false;
+        for (let i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i === 0) return false;
+        }
+        return true;
+    }
+
+    let max = prompt("Bạn muốn tìm số nguyên tố đến số bao nhiêu?");
+
+    if (max === null || max.trim() === "" || isNaN(max) || Number(max) < 2) {
+        document.getElementById("out").innerHTML = "Giá trị không hợp lệ!";
+    } else {
+        max = Number(max);
+        let result = [];
+
+        for (let i = 2; i <= max; i++) {
+            if (isPrime(i)) {
+                result.push(i);
+            }
+        }
+
+        document.getElementById("out").innerHTML =
+            "Các số nguyên tố từ 2 đến " + max + ": <br>" +
+            result.join(", ");
+    }
+</script>
+
+</body>
+</html>
