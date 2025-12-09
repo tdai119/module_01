@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+
+<h3>Bài 3: So sánh hai số</h3>
+<p id="out"></p>
+
+<script>
+    function checkNumbers(a, b) {
+        if (a > b) {
+            alert("Số thứ nhất lớn hơn số thứ hai!");
+        } else {
+            return a + b;
+        }
+    }
+
+    let x = Number(prompt("Nhập số thứ nhất:"));
+    let y = Number(prompt("Nhập số thứ hai:"));
+    let result = checkNumbers(x, y);
+
+    if (result !== undefined) {
+        document.getElementById("out").innerHTML =
+            "Tổng hai số là: " + result;
+    }
+</script>
+
+</body>
+</html>

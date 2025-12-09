@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body>
+
+<h3>Bài 4: Hiển thị giá trị biến result</h3>
+
+<script>
+    function addNumbers() {
+        firstNum = 4;
+        secondNum = 8;
+        result = firstNum + secondNum;
+
+        alert("Giá trị result bên trong hàm = " + result);
+
+        return result;
+    }
+
+    result = 0;
+    alert("Giá trị result TRƯỚC khi gọi hàm = " + result);
+
+    result = addNumbers();
+
+    alert("Giá trị result SAU khi gọi hàm = " + result);
+</script>
+
+</body>
+</html>

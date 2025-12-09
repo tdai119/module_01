@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+
+<h3>Bài 2</h3>
+<p id="out"></p>
+
+<script>
+    function increase(num) {
+        return num + 1;
+    }
+
+    let n = Number(prompt("Nhập một số:"));
+    let result = increase(n);
+
+    document.getElementById("out").innerHTML =
+        "Giá trị sau khi tăng: " + result;
+</script>
+
+</body>
+</html>
