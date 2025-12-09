@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body>
+
+<h3>Bài 4</h3>
+<p id="out"></p>
+
+<script>
+    function isDigit(ch) {
+        return ch >= "0" && ch <= "9";
+    }
+
+    let c = prompt("Nhập ký tự:");
+
+    document.getElementById("out").innerHTML =
+        "Kết quả: " + isDigit(c);
+</script>
+
+</body>
+</html>

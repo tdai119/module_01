@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+
+<h3>Bài 5</h3>
+<p id="out"></p>
+
+<script>
+    function minNumber(a, b, c) {
+        return Math.min(a, b, c);
+    }
+
+    let a = Number(prompt("Nhập số 1:"));
+    let b = Number(prompt("Nhập số 2:"));
+    let c = Number(prompt("Nhập số 3:"));
+
+    document.getElementById("out").innerHTML =
+        "Số nhỏ nhất: " + minNumber(a, b, c);
+</script>
+
+</body>
+</html>

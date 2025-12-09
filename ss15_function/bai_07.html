@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 7</title>
+</head>
+<body>
+
+<h3>Bài 7</h3>
+<p id="out"></p>
+
+<script>
+    function swap(a, b) {
+        return [b, a];
+    }
+
+    let a = Number(prompt("Nhập số a:"));
+    let b = Number(prompt("Nhập số b:"));
+
+    let result = swap(a, b);
+
+    document.getElementById("out").innerHTML =
+        "Sau khi đổi: a = " + result[0] + ", b = " + result[1];
+</script>
+
+</body>
+</html>

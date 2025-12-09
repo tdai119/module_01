@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 8</title>
+</head>
+<body>
+
+<h3>Bài 8</h3>
+<p id="out"></p>
+
+<script>
+    function reverseArray(arr) {
+        return arr.reverse();
+    }
+
+    let input = prompt("Nhập mảng (các số cách nhau bởi dấu phẩy):");
+
+    let arr = input.split(",").map(Number);
+
+    document.getElementById("out").innerHTML =
+        "Mảng đảo: " + reverseArray(arr).join(", ");
+</script>
+
+</body>
+</html>

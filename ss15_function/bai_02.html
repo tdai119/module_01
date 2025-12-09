@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+
+<h3>Bài 2</h3>
+<p id="out"></p>
+
+<script>
+    function area(r) {
+        return Math.PI * r * r;
+    }
+
+    function circum(r) {
+        return 2 * Math.PI * r;
+    }
+
+    let r = Number(prompt("Nhập bán kính:"));
+
+    document.getElementById("out").innerHTML =
+        "Diện tích: " + area(r).toFixed(2) +
+        "<br>Chu vi: " + circum(r).toFixed(2);
+</script>
+
+</body>
+</html>

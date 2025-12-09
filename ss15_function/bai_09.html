@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 9</title>
+</head>
+<body>
+
+<h3>Bài 9</h3>
+<p id="out"></p>
+
+<script>
+    function checkChar(arr, ch) {
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === ch) count++;
+        }
+        return count === 0 ? -1 : count;
+    }
+
+    let arr = prompt("Nhập mảng ký tự (vd: a,b,c,a):").split(",");
+    let ch = prompt("Nhập ký tự cần tìm:");
+
+    document.getElementById("out").innerHTML =
+        checkChar(arr, ch);
+</script>
+
+</body>
+</html>
