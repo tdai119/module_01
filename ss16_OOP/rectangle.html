@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rectangle Demo</title>
+</head>
+<body>
+
+<h2>Mô phỏng hình chữ nhật bằng lớp Rectangle</h2>
+
+<canvas id="myCanvas" width="500" height="300" style="border:1px solid #000"></canvas>
+
+<p id="result"></p>
+
+<script>
+    class Rectangle {
+        constructor(length, width) {
+            this.length = length;
+            this.width = width;
+        }
+
+        getArea() {
+            return this.length * this.width;
+        }
+
+        getPerimeter() {
+            return 2 * (this.length + this.width);
+        }
+
+        draw(canvasId) {
+            const canvas = document.getElementById(canvasId);
+            const ctx = canvas.getContext("2d");
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height); // xóa cũ
+
+            ctx.strokeStyle = "blue";
+            ctx.lineWidth = 3;
+            ctx.strokeRect(20, 20, this.length, this.width);
+        }
+    }
+
+    const rect = new Rectangle(200, 100);
+
+
+    rect.draw("myCanvas");
+
+    document.getElementById("result").innerHTML =
+        "Chiều dài: " + rect.length +
+        "<br>Chiều rộng: " + rect.width +
+        "<br>Diện tích: " + rect.getArea() +
+        "<br>Chu vi: " + rect.getPerimeter();
+
+    setTimeout(() => {
+        rect.length = 300;
+        rect.width = 150;
+        rect.draw("myCanvas");
+
+        document.getElementById("result").innerHTML =
+            "<b>Đã thay đổi kích thước!</b><br>" +
+            "Chiều dài: " + rect.length +
+            "<br>Chiều rộng: " + rect.width +
+            "<br>Diện tích: " + rect.getArea() +
+            "<br>Chu vi: " + rect.getPerimeter();
+    }, 2000);
+</script>
+
+</body>
+</html>
