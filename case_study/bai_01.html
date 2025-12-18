@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<h3>Bài 1</h3>
+<p id="output"></p>
+<script>
+    let input = prompt("Nhập mảng số, cách nhau bởi dấu ,");
+    let arr = input.split(",").map(Number);
+    let ok = true;
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] <= arr[i-1]){
+            ok = false;
+            break;
+        }
+    }
+
+    document.getElementById("output").innerHTML =
+        arr.join(", ") +"<br>"+ (ok ? "TRUE" : "FALSE");
+</script>
+</body>
+</html>
