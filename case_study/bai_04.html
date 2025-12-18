@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body>
+<h3>Bài 4</h3>
+<p id="output"></p>
+
+<script>
+function find(x){
+    if(!/^\d+\/\d+$/.test(x)) return "Không phải là phân só";
+
+    let [a, b] = x.split("/").map(Number);
+
+    if (b===0) return "Không phải là phân só";
+
+    function gcd(m,n){
+        while (n !== 0){
+            r = m%n;
+            m = n;
+            n = r;
+        }
+        return m;
+    }
+
+    let uoc_chung_lon_nhat = gcd(a, b);
+    return (a/uoc_chung_lon_nhat) + "/" + (b/uoc_chung_lon_nhat);
+}
+let x = prompt("Nhập phân số: ");
+document.getElementById("output").innerHTML = find(x);
+</script>
+</body>
+</html>
