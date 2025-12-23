@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 8</title>
+</head>
+<body>
+<h3>Bài 8</h3>
+<p id="out"></p>
+
+<script>
+    function isPrime(n) {
+        if (n < 2) return false;
+        for (let i = 2; i <= Math.sqrt(n); i++)
+            if (n % i === 0) return false;
+        return true;
+    }
+
+    let arr = prompt("Nhập mảng số, cách nhau bởi dấu ,").split(",").map(Number);
+    let ok = arr.every(isPrime);
+
+    document.getElementById("out").innerHTML = ok;
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 7</title>
+</head>
+<body>
+<h3>Bài 7</h3>
+<p id="out"></p>
+
+<script>
+    let arr = prompt("Nhập mảng").split(",");
+    let hasNum = false, hasChar = false;
+
+    for (let x of arr) {
+        if (!isNaN(x)) hasNum = true;
+        else hasChar = true;
+    }
+
+    document.getElementById("out").innerHTML =
+        hasNum && !hasChar ? 1 :
+            hasChar && !hasNum ? 0 : -1;
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 9</title>
+</head>
+<body>
+
+<h3>Bài 9</h3>
+<p id="out"></p>
+
+<script>
+    let n = Number(prompt("Nhập độ dài mảng n (n phải là số chẵn):"));
+
+    if (isNaN(n) || n <= 0 || n % 2 !== 0) {
+        document.getElementById("out").innerHTML =
+            "n không hợp lệ (phải là số chẵn > 0)";
+    } else {
+        let arr = [];
+
+        for (let i = 0; i < n; i++) {
+            arr[i] = Number(prompt("Nhập phần tử thứ " + (i + 1)));
+        }
+
+        let isOK = true;
+
+        for (let i = 0; i < n; i += 2) {
+            if (arr[i] >= arr[i + 1]) {
+                ok = false;
+                break;
+            }
+        }
+
+        document.getElementById("out").innerHTML =
+            "Mảng: [" + arr.join(", ") + "]<br>" +
+            (isOK ? "OK" : "NO");
+    }
+</script>
+
+</body>
+</html>
